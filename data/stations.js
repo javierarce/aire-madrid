@@ -1,113 +1,146 @@
 module.exports = {
-  1: {
-    name: 'Pº. Recoletos'
+  '4': {
+    name: 'Pza. de España',
+    address: 'Plaza de España',
+    lng: '-3.7122567',
+    lat: '40.4238823'
   },
-  35: {
-    name: 'Pza. del Carmen'
+  '8': {
+    name: 'Escuelas Aguirre',
+    address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
+    lng: '-3.6823158',
+    lat: '40.4215533'
   },
-  4: {
-    name: 'Pza. de España'
+  '11': {
+    name: 'Avda. Ramón y Cajal',
+    address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
+    lng: '-3.6773491',
+    lat: '40.4514734'
   },
-  39: {
-    name: 'Barrio del Pilar'
+  '16': {
+    name: 'Arturo Soria',
+    address: 'C/ Arturo Soria  esq. C/  Vizconde de los Asilos ',
+    lng: '-3.6392422',
+    lat: '40.4400457'
   },
-  6: {
-    name: 'Pza. Dr. Marañón'
+  '17': {
+    name: 'Villaverde',
+    address: 'C/. Juan Peñalver',
+    lng: '-3.7133167',
+    lat: '40.347147'
   },
-  7: {
-    name: 'Pza. M. de Salamanca'
+  '18': {
+    name: 'Farolillo',
+    address: 'Calle Farolillo - C/Ervigio',
+    lng: '-3.7318356',
+    lat: '40.3947825'
   },
-  8: {
-    name: 'Escuelas Aguirre'
+  '24': {
+    name: 'Casa de Campo',
+    address: 'Casa de Campo  (Terminal del Teleférico)',
+    lng: '-3.7473445',
+    lat: '40.4193577'
   },
-  9: {
-    name: 'Pza. Luca de Tena'
+  '27': {
+    name: 'Barajas Pueblo',
+    address: 'C/. Júpiter, 21 (Barajas) ',
+    lng: '-3.5800258',
+    lat: '40.4769179'
   },
-  38: {
-    name: 'Cuatro Caminos'
+  '35': {
+    name: 'Pza. del Carmen',
+    address: 'Plaza del Carmen esq. Tres Cruces. ',
+    lng: '-3.7031662',
+    lat: '40.4192091'
   },
-  11: {
-    name: 'Av. Ramón y Caja'
+  '36': {
+    name: 'Moratalaz',
+    address: 'Avd. Moratalaz  esq. Camino de los Vinateros',
+    lng: '-3.6453104',
+    lat: '40.4079517'
   },
-  12: {
-    name: 'Pza. Manuel Becerra'
+  '38': {
+    name: 'Cuatro Caminos',
+    address: 'Avda. Pablo Iglesias esq. C/ Marqués de Lema',
+    lng: '-3.7071303',
+    lat: '40.4455439'
   },
-  40: {
-    name: 'Vallecas'
+  '39': {
+    name: 'Barrio del Pilar',
+    address: 'Avd. Betanzos esq. C/  Monforte de Lemos ',
+    lng: '-3.7115364',
+    lat: '40.4782322'
   },
-  14: {
-    name: 'Pza. Fdez. Ladreda'
+  '40': {
+    name: 'Vallecas',
+    address: 'C/ Arroyo del Olivar  esq. C/  Río Grande. ',
+    lng: '-3.6515286',
+    lat: '40.3881478'
   },
-  15: {
-    name: 'Pza. Castilla'
+  '47': {
+    name: 'Mendez Alvaro',
+    address: 'C/ Juan de Mariana / Pza. Amanecer Mendez Alvaro',
+    lng: '-3.6868138',
+    lat: '40.3980991'
   },
-  16: {
-    name: 'Arturo Soria'
+  '48': {
+    name: 'Castellana',
+    address: 'C/ Jose Gutierrez Abascal',
+    lng: '-3.6903729',
+    lat: '40.4398904'
   },
-  17: {
-    name: 'Villaverde Alto'
+  '49': {
+    name: 'Parque del Retiro',
+    address: 'Paseo Venezuela- Casa de Vacas',
+    lng: '-3.6824999',
+    lat: '40.4144444'
   },
-  18: {
-    name: 'C/ Farolillo'
+  '50': {
+    name: 'Plaza Castilla',
+    address: 'Plaza Castilla (Canal)',
+    lng: '-3.6887449',
+    lat: '40.4655841'
   },
-  19: {
-    name: 'Huerta Castañeda'
+  '54': {
+    name: 'Ensanche de Vallecas',
+    address: 'Avda La Gavia / Avda. Las Suertes',
+    lng: '-3.6121394',
+    lat: '40.3730118'
   },
-  36: {
-    name: 'Moratalaz'
+  '55': {
+    name: 'Urb. Embajada',
+    address: 'C/ Riaño (Barajas) ',
+    lng: '-3.5805649',
+    lat: '40.4623628'
   },
-  21: {
-    name: 'Pza. Cristo Rey'
+  '56': {
+    name: 'Pza. Elíptica',
+    address: ' Pza. Elíptica - Avda. Oporto',
+    lng: '-3.7187679',
+    lat: '40.3850336'
   },
-  22: {
-    name: 'Pº. Pontones'
+  '57': {
+    name: 'Sanchinarro',
+    address: 'C/ Princesa de Eboli esq C/ Maria Tudor',
+    lng: '-3.6605173',
+    lat: '40.4942012'
   },
-  23: {
-    name: 'Final C/ Alcalá'
+  '58': {
+    name: 'El Pardo',
+    address: 'Avda. La Guardia',
+    lng: '-3.7746101',
+    lat: '40.5180701'
   },
-  24: {
-    name: 'Casa de Campo'
+  '59': {
+    name: 'Juan Carlos I',
+    address: 'Parque Juan Carlos I (frente oficinas mantenimiento)',
+    lng: '-3.6163407',
+    lat: '40.4607255'
   },
-  25: {
-    name: 'Santa Eugenia'
-  },
-  26: {
-    name: 'Urb. Embajada (Barajas)'
-  },
-  27: {
-    name: 'Barajas'
-  },
-  47: {
-    name: 'Méndez Álvaro'
-  },
-  48: {
-    name: 'Pº. Castellana'
-  },
-  49: {
-    name: 'Retiro'
-  },
-  50: {
-    name: 'Pza. Castilla'
-  },
-  54: {
-    name: 'Ensanche Vallecas'
-  },
-  55: {
-    name: 'Urb. Embajada (Barajas)'
-  },
-  56: {
-    name: 'Plaza Elíptica'
-  },
-  57: {
-    name: 'Sanchinarro'
-  },
-  58: {
-    name: 'El Pardo'
-  },
-  59: {
-    name: 'Parque Juan Carlos I'
-  },
-  60: {
-    name: 'Tres Olivos'
+  '60': {
+    name: 'Tres Olivos',
+    address: 'Plaza Tres Olivos ',
+    lng: '-3.6897308',
+    lat: '40.5005477'
   }
 }
