@@ -64,7 +64,7 @@ air.getStations().then((data) => {
 ### Legend
 
 | Magnitude   | Code                                |
-| ----------- |:-----------------------------------:|
+| ----------- |-------------------------------------|
 | 1           | Dióxido de Azufre                   |
 | 6           | Monóxido de Carbono                 |
 | 7           | Monóxido de Nitrógeno               |
