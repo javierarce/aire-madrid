@@ -1,0 +1,26 @@
+{
+  "name": "aire-madrid",
+  "version": "1.0.0",
+  "description": "Get daily readings from the air quality stations in Madrid",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierarce/aire-madrid.git"
+  },
+  "keywords": [
+    "air",
+    "quality",
+    "madrid",
+    "pollution"
+  ],
+  "author": "Javier Arce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javierarce/aire-madrid/issues"
+  },
+  "homepage": "https://github.com/javierarce/aire-madrids#readme",
+  "dependencies": {
+    "xml2json": "^0.12.0"
+  }
+}
