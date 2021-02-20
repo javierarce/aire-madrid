@@ -4,7 +4,7 @@ NPM package to get hourly readings from Madrid's air quality. WIP.
 
 ### How to use it 
 
-```
+```js
 const air = require('aire-madrid')
 
 air.getStations().then((data) => {
@@ -14,6 +14,33 @@ air.getStations().then((data) => {
   // Get all readings from station 58
   console.log(data[58])
 })
+```
+
+### Results
+
+```js
+{
+  name: 'Monóxido de Nitrógeno',
+  values: [
+    '1',  '1',  '1',  '1',  '1',
+    '1',  '2',  '2',  '7',  '11',
+    '-1', '-1', '-1', '-1', '-1',
+    '-1', '-1', '-1', '-1', '-1',
+    '-1', '-1', '-1', '-1'
+  ]
+}
+```
+
+```js
+{
+  station: { name: 'El Pardo' },
+  magnitudes: {
+    '7': { name: 'Monóxido de Nitrógeno', values: [Array] },
+    '8': { name: 'Dióxido de Nitrógeno', values: [Array] },
+    '12': { name: 'Óxidos de Nitrógeno', values: [Array] },
+    '14': { name: 'Ozono', values: [Array] }
+  }
+}
 ```
 
 ### TODO
