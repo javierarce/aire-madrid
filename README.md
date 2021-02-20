@@ -45,8 +45,8 @@ air.getStations().then((data) => {
 
 ### TODO
 
-- [] Add stations metadata (lng, lat, address, etc.)
-- [] Add magnitudes metadata (units, abbreviations, etc.)
-- [] Add more methods to get readings
-- [] Add method to get an air quality score
-- [] Improve documentation with examples
+- [ ] Add stations metadata (lng, lat, address, etc.)
+- [ ] Add magnitudes metadata (units, abbreviations, etc.)
+- [ ] Add more methods to get readings
+- [ ] Add method to get an air quality score
+- [ ] Improve documentation with examples
