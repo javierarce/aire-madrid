@@ -1,6 +1,14 @@
 # aire-madrid
 
-NPM package to get hourly readings from Madrid's air quality. WIP.
+Node package to get information about Madrid's air quality.
+
+## Installation
+
+`yarn add aire-madrid`
+
+or
+
+`npm install aire-madrid`
 
 ### How to use it 
 
