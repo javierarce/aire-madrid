@@ -43,6 +43,11 @@ air.getStations().then((data) => {
 }
 ```
 
+### Data sources
+
+- [Air quality readings](https://datos.madrid.es/sites/v/index.jsp?vgnextoid=41e01e007c9db410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD).
+- [Stations](https://datos.madrid.es/sites/v/index.jsp?vgnextoid=2ac5be53b4d2b610VgnVCM2000001f4a900aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD).
+
 ### TODO
 
 - [ ] Add stations metadata (lng, lat, address, etc.)
