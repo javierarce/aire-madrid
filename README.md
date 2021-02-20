@@ -46,7 +46,12 @@ air.getStations().then((data) => {
 ```
 ```js
 {
-  station: { name: 'El Pardo' },
+  station: {
+    name: 'El Pardo',
+    address: 'Avda. La Guardia',
+    lng: '-3.7746101',
+    lat: '40.5180701'
+  },
   magnitudes: {
     '7': { name: 'Monóxido de Nitrógeno', values: [Array] },
     '8': { name: 'Dióxido de Nitrógeno', values: [Array] },
@@ -63,8 +68,11 @@ air.getStations().then((data) => {
 
 ### TODO
 
-- [ ] Add stations metadata (lng, lat, address, etc.)
 - [ ] Add magnitudes metadata (units, abbreviations, etc.)
 - [ ] Add more methods to get readings
 - [ ] Add method to get an air quality score
 - [ ] Improve documentation with examples
+
+### DONE
+
+- [x] Add stations metadata (lng, lat, address, etc.)
