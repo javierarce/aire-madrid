@@ -14,7 +14,7 @@ or
 
 ### How to use it 
 
-Get reading from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 4 and 11.
+#### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 4 and 11.
 
 ```js
 const air = require('aire-madrid')
@@ -67,6 +67,33 @@ air.getReadings({ stations: [4, 11], magnitudes: [7, 9]}).then((data) => {
     }
   }
 }
+```
+
+#### Get the list of stations
+
+```js
+const air = require('aire-madrid')
+
+air.getStations().then((data) => {
+  console.log(data)
+})
+```
+
+```js
+{
+  '4': {
+    name: 'Pza. de España',
+    address: 'Plaza de España',
+    lng: '-3.7122567',
+    lat: '40.4238823'
+  },
+  '8': {
+    name: 'Escuelas Aguirre',
+    address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
+    lng: '-3.6823158',
+    lat: '40.4215533'
+  },
+  …
 ```
 
 ### Legend

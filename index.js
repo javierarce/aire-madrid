@@ -13,7 +13,7 @@ module.exports = class Air {
     this.source = source
   }
 
-  getStations() {
+  importData() {
     const options = {
       headers: { 'Accept': 'application/xml' },
       method: 'GET',
@@ -57,9 +57,20 @@ module.exports = class Air {
     return (number < 10) ? `0${number}` : number
   }
 
+  getStations () {
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(STATIONS)
+      } catch (error) {
+        console.error(error)
+        return reject(error)
+      }
+    })
+  }
+
   getReadings (options = undefined) {
     return new Promise((resolve) => {
-      this.getStations().then((stations) => {
+      this.importData().then((stations) => {
         
         if (options == undefined) {
           return resolve(stations)

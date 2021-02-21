@@ -6,6 +6,7 @@ const nock = require('nock')
 const expect = require('chai').expect
  
 const FIXTURES = require('./fixtures')
+const STATIONS = require('../data/stations')
 
 const Air = require('../index')
 const air = new Air()
@@ -24,6 +25,11 @@ describe('Readings', () => {
   it('should return all the readings', async () => {
     let result = await air.getReadings()
     expect(result).to.deep.equal(FIXTURES.all)
+  })
+
+  it('should return the station list', async () => {
+    let result = await air.getStations()
+    expect(result).to.deep.equal(STATIONS)
   })
 
   it('should return data for a given station', async () => {

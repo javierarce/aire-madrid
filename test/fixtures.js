@@ -1667,6 +1667,8 @@ module.exports = {
       }
     }
   },
+  stations: {
+  },
   station_57_1: {
     station: {
       name: 'Sanchinarro',
