@@ -22,7 +22,6 @@ module.exports = class Air {
     }
 
     return new Promise((resolve, reject) => {
-
       if (this.source) {
         let data = fs.readFileSync(this.source)
         return resolve(this.extractData(data))
@@ -57,10 +56,21 @@ module.exports = class Air {
     return (number < 10) ? `0${number}` : number
   }
 
+  getArrayFromHash (array) {
+    let response = []
+
+    for (let key in array) {
+      response.push(array[key])
+    }
+
+    return response
+  }
+
   getMagnitudes () {
     return new Promise((resolve, reject) => {
       try {
-        resolve(MAGNITUDES)
+        let response = this.getArrayFromHash(MAGNITUDES)
+        resolve(response)
       } catch (error) {
         console.error(error)
         return reject(error)
@@ -71,7 +81,8 @@ module.exports = class Air {
   getStations () {
     return new Promise((resolve, reject) => {
       try {
-        resolve(STATIONS)
+        let response = this.getArrayFromHash(STATIONS)
+        resolve(response)
       } catch (error) {
         console.error(error)
         return reject(error)
@@ -84,7 +95,7 @@ module.exports = class Air {
       this.importData().then((stations) => {
         
         if (options == undefined) {
-          return resolve(stations)
+          return resolve(this.getArrayFromHash(stations))
         } 
 
         if (options.station) {
@@ -93,10 +104,10 @@ module.exports = class Air {
         }
 
         if (options.stations) {
-          let result = {}
+          let result = []
 
           options.stations.forEach((stationID) => {
-            result[stationID] = this.filterByStation(stations, stationID, options.magnitudes)
+            result.push(this.filterByStation(stations, stationID, options.magnitudes))
           })
 
           resolve(result)
@@ -105,19 +116,15 @@ module.exports = class Air {
     })
   }
 
-  filterByStation (stations, stationID, magnitudes) {
+  filterByStation (stations, stationID, magnitudesIDs) {
     let station = stations[stationID]
     let result = station
 
-    if (magnitudes && magnitudes.length) {
+    if (magnitudesIDs && magnitudesIDs.length) {
 
-      result = { station: station.station }
-      result.magnitudes = {}
-
-      magnitudes.forEach((magnitude) => {
-        if (station.magnitudes[magnitude]) {
-          result.magnitudes[magnitude] = station.magnitudes[magnitude]
-        }
+      result = { ...station }
+      result.magnitudes = station.magnitudes.filter((magnitude) => {
+        return magnitudesIDs.includes(+magnitude.id)
       })
     }
 
@@ -162,16 +169,17 @@ module.exports = class Air {
         }
 
         if (!magnitudes[id]) {
-          magnitudes[id] = {}
+          magnitudes[id] = []
         }
 
-        magnitudes[id][+point.magnitud] = this.extractStationData(id, point)
+        magnitudes[id].push(this.extractStationData(id, point))
 
         stations[id] = {
-          station: STATIONS[id],
+          ...STATIONS[id],
           magnitudes: magnitudes[id]
         }
       })
+
       resolve(stations)
     })
   }
