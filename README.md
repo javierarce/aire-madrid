@@ -2,6 +2,8 @@
 
 Node package to get information about Madrid's air quality.
 
+[![Build Status](https://travis-ci.com/javierarce/aire-madrid.svg?branch=main)](https://travis-ci.com/javierarce/aire-madrid)
+
 ## Installation
 
 `yarn add aire-madrid`
