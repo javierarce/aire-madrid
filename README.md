@@ -144,6 +144,8 @@ air.getMagnitudes().then((data) => {
 
 ### TODO
 
+- [ ] Return data in the form of an array
+- [ ] Find a better name than 'magnitude'
 - [ ] Add magnitudes metadata (units, abbreviations, etc.)
 - [ ] Add method to get an air quality score
 
