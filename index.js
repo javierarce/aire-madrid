@@ -57,6 +57,17 @@ module.exports = class Air {
     return (number < 10) ? `0${number}` : number
   }
 
+  getMagnitudes () {
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(MAGNITUDES)
+      } catch (error) {
+        console.error(error)
+        return reject(error)
+      }
+    })
+  }
+
   getStations () {
     return new Promise((resolve, reject) => {
       try {

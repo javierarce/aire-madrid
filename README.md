@@ -96,6 +96,25 @@ air.getStations().then((data) => {
   …
 ```
 
+#### Get the list of magnitudes
+
+```js
+const air = require('aire-madrid')
+
+air.getMagnitudes().then((data) => {
+  console.log(data)
+})
+```
+
+```js
+{
+  '1': { name: 'Dióxido de Azufre' },
+  '6': { name: 'Monóxido de Carbono' },
+  …
+  '44': { name: 'Hidrocarburos no metánicos (hexano)' }
+}
+```
+
 ### Legend
 
 | Magnitude   | Code                                |

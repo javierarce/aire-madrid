@@ -7,6 +7,7 @@ const expect = require('chai').expect
  
 const FIXTURES = require('./fixtures')
 const STATIONS = require('../data/stations')
+const MAGNITUDES = require('../data/magnitudes')
 
 const Air = require('../index')
 const air = new Air()
@@ -27,9 +28,14 @@ describe('Readings', () => {
     expect(result).to.deep.equal(FIXTURES.all)
   })
 
-  it('should return the station list', async () => {
+  it('should return the list of stations', async () => {
     let result = await air.getStations()
     expect(result).to.deep.equal(STATIONS)
+  })
+
+  it('should return the list of magnitudes', async () => {
+    let result = await air.getMagnitudes()
+    expect(result).to.deep.equal(MAGNITUDES)
   })
 
   it('should return data for a given station', async () => {
