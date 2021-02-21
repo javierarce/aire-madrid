@@ -145,11 +145,11 @@ air.getMagnitudes().then((data) => {
 ### TODO
 
 - [ ] Add magnitudes metadata (units, abbreviations, etc.)
-- [ ] Add more methods to get readings
 - [ ] Add method to get an air quality score
 
 ### DONE
 
 - [x] Add tests
+- [x] Add more methods to get readings
 - [x] Improve documentation with examples
 - [x] Add stations metadata (lng, lat, address, etc.)
