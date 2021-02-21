@@ -12,51 +12,57 @@ or
 
 ### How to use it 
 
-Get reading from 'Monóxido de Nitrógeno' at station 58.
+Get reading from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 4 and 11.
 
 ```js
 const air = require('aire-madrid')
 
-air.getStations().then((data) => {
-  console.log(data[58].magnitudes[7])
+air.getReadings({ stations: [4, 11], magnitudes: [7, 9]}).then((data) => {
+  console.log(data)
 })
 ```
 
 ```js
 {
-  name: 'Monóxido de Nitrógeno',
-  values: [
-    '1',  '1',  '1',  '1',  '1',
-    '1',  '2',  '2',  '7',  '11',
-    '-1', '-1', '-1', '-1', '-1',
-    '-1', '-1', '-1', '-1', '-1',
-    '-1', '-1', '-1', '-1'
-  ]
-}
-```
-
-Get all readings from station 58.
-
-```js
-const air = require('aire-madrid')
-
-air.getStations().then((data) => {
-  console.log(data[58])
-})
-```
-```js
-{
-  station: {
-    name: 'El Pardo',
-    address: 'Avda. La Guardia',
-    lng: '-3.7746101',
-    lat: '40.5180701'
+  '4': {
+    station: {
+      name: 'Pza. de España',
+      address: 'Plaza de España',
+      lng: '-3.7122567',
+      lat: '40.4238823'
+    },
+    magnitudes: {
+      '7': {
+        name: 'Monóxido de Nitrógeno',
+        values: [
+          '45', '28', '17', '15',  '8',
+          '6',  '11', '34', '133', '109',
+          '17', '7',  '9',  '7',   '2',
+          '2',  '1',  '1',  '2',   '2',
+          '1',  '2',  '-1', '-1'
+        ]
+      }
+    }
   },
-  magnitudes: {
-    '7': { name: 'Monóxido de Nitrógeno', values: [Array] },
-    '8': { name: 'Dióxido de Nitrógeno', values: [Array] },
-    '12': { name: 'Óxidos de Nitrógeno', values: [Array] },
-    '14': { name: 'Ozono', values: [Array] }
+  '11': {
+    station: {
+      name: 'Avda. Ramón y Cajal',
+      address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
+      lng: '-3.6773491',
+      lat: '40.4514734'
+    },
+    magnitudes: {
+      '7': {
+        name: 'Monóxido de Nitrógeno',
+        values: [
+          '3',  '3',  '1',  '1',  '1',
+          '1',  '1',  '6',  '19', '12',
+          '11', '12', '9',  '8',  '6',
+          '5',  '4',  '5',  '7',  '8',
+          '14', '11', '-1', '-1'
+        ]
+      }
+    }
   }
 }
 ```
@@ -93,8 +99,9 @@ air.getStations().then((data) => {
 - [ ] Add magnitudes metadata (units, abbreviations, etc.)
 - [ ] Add more methods to get readings
 - [ ] Add method to get an air quality score
-- [ ] Improve documentation with examples
 
 ### DONE
 
+- [x] Add tests
+- [x] Improve documentation with examples
 - [x] Add stations metadata (lng, lat, address, etc.)
