@@ -1,69 +1,83 @@
 module.exports = [{
-  id: '4',
-  name: 'Pza. de España',
-  address: 'Plaza de España',
-  lng: '-3.7122567',
-  lat: '40.4238823',
-  magnitudes: [
-    {
-      id: '1',
-      name: 'Dióxido de Azufre',
-      values: [
-        '13', '11', '10', '9',  '8',
-        '7',  '7',  '8',  '11', '10',
-        '7',  '8',  '10', '8',  '8',
-        '8',  '8',  '8',  '9',  '10',
-        '10', '12', '-1', '-1'
-      ]
-    },
-    {
-      id: '6',
-      name: 'Monóxido de Carbono',
-      values: [
-        '0.5', '0.4', '0.4', '0.3',
-        '0.3', '0.3', '0.3', '1.1',
-        '1.5', '1.4', '0.3', '0.2',
-        '0.2', '0.3', '0.2', '0.2',
-        '0.2', '0.2', '0.3', '0.3',
-        '0.3', '0.4', '-1',  '-1'
-      ]
-    },
-    {
-      id: '7',
-      name: 'Monóxido de Nitrógeno',
-      values: [
-        '45', '28', '17', '15',  '8',
-        '6',  '11', '34', '133', '109',
-        '17', '7',  '9',  '7',   '2',
-        '2',  '1',  '1',  '2',   '2',
-        '1',  '2',  '-1', '-1'
-      ]
-    },
-    {
-      id: '8',
-      name: 'Dióxido de Nitrógeno',
-      values: [
-        '47', '40', '34', '28', '25',
-        '24', '23', '29', '53', '56',
-        '43', '26', '26', '23', '14',
-        '11', '9',  '14', '28', '32',
-        '34', '51', '-1', '-1'
-      ]
-    },
-    {
-      id: '12',
-      name: 'Óxidos de Nitrógeno',
-      values: [
-        '115', '82',  '60', '50',
-        '38',  '34',  '39', '81',
-        '257', '223', '70', '37',
-        '40',  '34',  '17', '14',
-        '10',  '15',  '30', '35',
-        '36',  '55',  '-1', '-1'
-      ]
-    }
-  ]
-},
+    id: '4',
+    name: 'Pza. de España',
+    address: 'Plaza de España',
+    lng: '-3.7122567',
+    lat: '40.4238823',
+    magnitudes: [
+      {
+        id: '1',
+        name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
+        values: [
+          '13', '11', '10', '9',  '8',
+          '7',  '7',  '8',  '11', '10',
+          '7',  '8',  '10', '8',  '8',
+          '8',  '8',  '8',  '9',  '10',
+          '10', '12', '-1', '-1'
+        ]
+      },
+      {
+        id: '6',
+        name: 'Monóxido de Carbono',
+        values: [
+          '0.5', '0.4', '0.4', '0.3',
+          '0.3', '0.3', '0.3', '1.1',
+          '1.5', '1.4', '0.3', '0.2',
+          '0.2', '0.3', '0.2', '0.2',
+          '0.2', '0.2', '0.3', '0.3',
+          '0.3', '0.4', '-1',  '-1'
+        ]
+      },
+      {
+        id: '7',
+        name: 'Monóxido de Nitrógeno',
+        values: [
+          '45', '28', '17', '15',  '8',
+          '6',  '11', '34', '133', '109',
+          '17', '7',  '9',  '7',   '2',
+          '2',  '1',  '1',  '2',   '2',
+          '1',  '2',  '-1', '-1'
+        ]
+      },
+      {
+        id: '8',
+        name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
+        values: [
+          '47', '40', '34', '28', '25',
+          '24', '23', '29', '53', '56',
+          '43', '26', '26', '23', '14',
+          '11', '9',  '14', '28', '32',
+          '34', '51', '-1', '-1'
+        ]
+      },
+      {
+        id: '12',
+        name: 'Óxidos de Nitrógeno',
+        values: [
+          '115', '82',  '60', '50',
+          '38',  '34',  '39', '81',
+          '257', '223', '70', '37',
+          '40',  '34',  '17', '14',
+          '10',  '15',  '30', '35',
+          '36',  '55',  '-1', '-1'
+        ]
+      }
+    ]
+  },
   {
     id: '8',
     name: 'Escuelas Aguirre',
@@ -74,6 +88,13 @@ module.exports = [{
       {
         id: '1',
         name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
         values: [
           '3', '3', '3',  '3',  '3',
           '3', '3', '3',  '3',  '3',
@@ -108,6 +129,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '50', '43', '28', '21',
           '18', '18', '27', '36',
@@ -120,6 +148,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '14', '14', '11', '5',  '6',
           '9',  '7',  '5',  '10', '12',
@@ -131,6 +166,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '37', '32', '20', '12',
           '12', '16', '15', '15',
@@ -155,6 +197,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '11', '19', '44', '46',
           '50', '47', '29', '20',
@@ -223,6 +272,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '56', '52', '22', '16',
           '13', '35', '44', '59',
@@ -303,6 +359,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '46', '42', '21', '15',
           '33', '51', '48', '45',
@@ -327,6 +390,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '20', '20', '36', '41', '23',
           '3',  '4',  '5',  '4',  '22',
@@ -358,6 +428,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '68', '65', '55', '51',
           '49', '47', '51', '71',
@@ -382,6 +459,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '2',  '2',  '4',  '3',  '3',
           '2',  '3',  '5',  '4',  '17',
@@ -402,6 +486,13 @@ module.exports = [{
       {
         id: '1',
         name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
         values: [
           '11', '9',  '9',  '9',  '9',
           '9',  '9',  '9',  '9',  '10',
@@ -436,6 +527,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '57', '43', '49', '34',
           '31', '23', '28', '31',
@@ -448,6 +546,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '45',  '33',  '26', '27',
           '26',  '25',  '26', '27',
@@ -472,6 +577,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '3',  '4',  '5',  '4',  '4',
           '7',  '5',  '3',  '4',  '8',
@@ -539,6 +651,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '48', '41', '44', '40', '30',
           '28', '19', '21', '20', '20',
@@ -550,6 +669,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '19', '18', '16', '15',
           '15', '11', '14', '14',
@@ -562,6 +688,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '38',  '36',  '33', '29',
           '28',  '24',  '26', '26',
@@ -585,6 +718,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '7',  '7',  '5',  '4',  '4',
           '4',  '6',  '7',  '6',  '14',
@@ -652,6 +792,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '66', '54', '43', '41', '34',
           '39', '36', '41', '48', '36',
@@ -675,6 +822,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '2',  '2',  '3',  '5',  '8',
           '6',  '6',  '5',  '6',  '13',
@@ -695,6 +849,13 @@ module.exports = [{
       {
         id: '1',
         name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
         values: [
           '9', '9', '8',  '8',  '8',
           '8', '9', '8',  '8',  '8',
@@ -729,6 +890,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '72', '63', '27', '25',
           '26', '33', '45', '41',
@@ -753,6 +921,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '2',  '6',  '33', '34', '34',
           '28', '13', '22', '17', '24',
@@ -773,6 +948,13 @@ module.exports = [{
       {
         id: '1',
         name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
         values: [
           '7',  '5',  '4',  '4',  '5',
           '4',  '4',  '4',  '5',  '7',
@@ -795,6 +977,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '51', '31', '16', '15',
           '17', '34', '52', '59',
@@ -807,6 +996,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '33',  '22',  '14', '14',
           '15',  '22',  '28', '34',
@@ -851,6 +1047,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '80', '70', '27', '19',
           '18', '16', '31', '38',
@@ -863,6 +1066,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '13', '13', '9',  '7',  '5',
           '5',  '7',  '10', '11', '15',
@@ -874,6 +1084,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '28', '38', '19', '12',
           '10', '10', '12', '16',
@@ -954,6 +1171,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '64', '62', '49', '40',
           '39', '36', '45', '43',
@@ -978,6 +1202,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '8',  '7',  '7',  '10', '7',
           '7',  '9',  '16', '8',  '28',
@@ -1009,6 +1240,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '34', '22', '18', '14',
           '14', '26', '37', '53',
@@ -1021,6 +1259,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '37', '22',  '17', '14',
           '15', '15',  '21', '26',
@@ -1065,6 +1310,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '72', '62', '34', '40',
           '42', '37', '38', '40',
@@ -1077,6 +1329,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '14', '16', '12', '9',  '11',
           '12', '12', '10', '12', '19',
@@ -1088,6 +1347,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '24', '24', '19', '12',
           '15', '17', '17', '15',
@@ -1132,6 +1398,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '62', '58', '24', '21',
           '17', '22', '40', '44',
@@ -1144,6 +1417,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '12', '12', '11', '12', '7',
           '10', '8',  '12', '13', '15',
@@ -1155,6 +1435,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '30', '27', '21', '18',
           '13', '16', '15', '20',
@@ -1199,6 +1486,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '53', '44', '21', '16', '16',
           '14', '23', '33', '37', '34',
@@ -1222,6 +1516,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '5',  '10', '33', '36', '37',
           '41', '28', '14', '17', '28',
@@ -1253,6 +1554,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '59', '52', '24', '19',
           '20', '28', '35', '47',
@@ -1265,6 +1573,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '21', '16', '11', '9',  '3',
           '6',  '12', '12', '12', '13',
@@ -1276,6 +1591,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '35',  '25',  '22', '13',
           '9',   '14',  '17', '21',
@@ -1320,6 +1642,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '30', '17', '12', '11', '17',
           '34', '47', '56', '61', '59',
@@ -1343,6 +1672,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '28', '39', '45', '39', '30',
           '15', '3',  '1',  '1',  '11',
@@ -1374,6 +1710,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '78', '67', '58', '60',
           '64', '55', '47', '64',
@@ -1386,6 +1729,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '69', '59', '52', '47',
           '45', '42', '41', '41',
@@ -1478,6 +1828,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '66', '51',  '55', '42',
           '35', '32',  '34', '52',
@@ -1490,6 +1847,13 @@ module.exports = [{
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 10 ] },
+          { name: 'bien', range: [ 11, 20 ] },
+          { name: 'regular', range: [ 21, 25 ] },
+          { name: 'mal', range: [ 26, 50 ] },
+          { name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
           '22', '13', '12', '6',  '7',
           '10', '13', '13', '16', '16',
@@ -1501,6 +1865,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '41', '25', '23', '12',
           '14', '16', '19', '20',
@@ -1525,6 +1896,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '6',  '6',  '8',  '9',  '8',
           '9',  '7',  '6',  '6',  '10',
@@ -1545,6 +1923,13 @@ module.exports = [{
       {
         id: '1',
         name: 'Dióxido de Azufre',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 100 ] },
+          { name: 'bien', range: [ 101, 200 ] },
+          { name: 'regular', range: [ 201, 350 ] },
+          { name: 'mal', range: [ 351, 500 ] },
+          { name: 'muy mal', range: [ 501, 1250 ] }
+        ],
         values: [
           '3', '3', '3',  '3',  '2',
           '2', '2', '2',  '3',  '3',
@@ -1567,6 +1952,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '47', '51', '64', '36', '60',
           '52', '45', '43', '47', '47',
@@ -1578,6 +1970,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '28',  '22',  '27', '21',
           '20',  '23',  '25', '22',
@@ -1622,6 +2021,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '15', '12', '13', '13', '12',
           '12', '16', '17', '17', '18',
@@ -1645,6 +2051,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '14', '13', '11', '11', '11',
           '11', '10', '8',  '9',  '12',
@@ -1676,6 +2089,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '67', '70', '60', '53', '42',
           '39', '41', '43', '43', '32',
@@ -1699,6 +2119,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '2',  '1',  '1',  '1',  '2',
           '5',  '2',  '1',  '6',  '10',
@@ -1730,6 +2157,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '59', '61', '65', '40',
           '35', '51', '55', '55',
@@ -1742,6 +2176,13 @@ module.exports = [{
       {
         id: '10',
         name: 'Partículas < 10 µm',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 20 ] },
+          { name: 'bien', range: [ 21, 35 ] },
+          { name: 'regular', range: [ 36, 50 ] },
+          { name: 'mal', range: [ 51, 100 ] },
+          { name: 'muy mal', range: [ 101, 1200 ] }
+        ],
         values: [
           '25',  '16',  '19', '4',  '5',
           '18',  '19',  '14', '20', '22',
@@ -1765,6 +2206,13 @@ module.exports = [{
       {
         id: '14',
         name: 'Ozono',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 80 ] },
+          { name: 'bien', range: [ 81, 120 ] },
+          { name: 'regular', range: [ 121, 180 ] },
+          { name: 'mal', range: [ 181, 240 ] },
+          { name: 'muy mal', range: [ 241, 600 ] }
+        ],
         values: [
           '17', '9',  '2',  '22', '27',
           '10', '4',  '3',  '12', '21',

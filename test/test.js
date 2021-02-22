@@ -70,3 +70,4 @@ describe('Readings', () => {
     expect(result).to.deep.equal(FIXTURES.station_mix)
   })
 })
+

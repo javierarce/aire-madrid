@@ -8,6 +8,13 @@ module.exports = [{
     {
       id: '1',
       name: 'Dióxido de Azufre',
+      scoring: [
+        { name: 'muy bien', range: [ 0, 100 ] },
+        { name: 'bien', range: [ 101, 200 ] },
+        { name: 'regular', range: [ 201, 350 ] },
+        { name: 'mal', range: [ 351, 500 ] },
+        { name: 'muy mal', range: [ 501, 1250 ] }
+      ],
       values: [
         '13', '11', '10', '9',  '8',
         '7',  '7',  '8',  '11', '10',
@@ -42,6 +49,13 @@ module.exports = [{
     {
       id: '8',
       name: 'Dióxido de Nitrógeno',
+      scoring: [
+        { name: 'muy bien', range: [ 0, 40 ] },
+        { name: 'bien', range: [ 41, 100 ] },
+        { name: 'regular', range: [ 101, 200 ] },
+        { name: 'mal', range: [ 201, 400 ] },
+        { name: 'muy mal', range: [ 401, 1000 ] }
+      ],
       values: [
         '47', '40', '34', '28', '25',
         '24', '23', '29', '53', '56',
@@ -85,6 +99,13 @@ module.exports = [{
       {
         id: '8',
         name: 'Dióxido de Nitrógeno',
+        scoring: [
+          { name: 'muy bien', range: [ 0, 40 ] },
+          { name: 'bien', range: [ 41, 100 ] },
+          { name: 'regular', range: [ 101, 200 ] },
+          { name: 'mal', range: [ 201, 400 ] },
+          { name: 'muy mal', range: [ 401, 1000 ] }
+        ],
         values: [
           '56', '52', '22', '16',
           '13', '35', '44', '59',
