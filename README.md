@@ -18,6 +18,7 @@ or
 
 - The first value in the `values` array corresponds to the 1 AM of the current day
 - Not all the stations provide information about all the pollutants.
+- For [these pollutants](#how-is-the-quality-index-calculated) a scoring is offered.
 
 ```js
 const air = require('aire-madrid')
@@ -28,15 +29,13 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
 ```
 
 ```js
-[
-{
+[{
     id: '8',
     name: 'Escuelas Aguirre',
     address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
     lng: '-3.6823158',
     lat: '40.4215533',
-    pollutants: [
-      {
+    pollutants: [{
         id: '7',
         name: 'Monóxido de Nitrógeno',
         values: [
@@ -45,8 +44,7 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
            3,  2,  2, 3, 3, 4, 4,
            9
         ]
-      },
-      {
+      }, {
         id: '9',
         name: 'Partículas < 2.5 µm',
         scoring: [
@@ -71,8 +69,7 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
     address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
     lng: '-3.6773491',
     lat: '40.4514734',
-    pollutants: [
-      {
+    pollutants: [{
         id: '7',
         name: 'Monóxido de Nitrógeno',
         values: [
