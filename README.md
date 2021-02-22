@@ -34,7 +34,8 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
     pollutants: [{
       id: '7',
       name: 'Monóxido de Nitrógeno',
-      values: [ 22, 11,  4, 2, 2, 2, 3, 5, 10, 10, 7, 4, 3, 3, 3,  2,  2, 3, 3, 4, 4, 9 ]
+      values: [ 22, 11, 4, 2, 2, 2, 3, 5, 10, 10, 7, 
+                4, 3, 3, 3,  2, 2, 3, 3, 4, 4, 9 ]
     }, {
       id: '9',
       name: 'Partículas < 2.5 µm',
@@ -45,7 +46,8 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
         { value: 2, name: 'mal', range: [ 26, 50 ] },
         { value: 1, name: 'muy mal', range: [ 51, 800 ] }
       ],
-      values: [ 14, 14, 11,  5,  6,  9,  7, 5, 10, 12, 15, 11, 11, 11, 8, 12, 13, 19, 17, 17, 25, 30 ],
+      values: [ 14, 14, 11, 5, 6, 9, 7, 5, 10, 12, 15, 11, 
+                11, 11, 8, 12, 13, 19, 17, 17, 25, 30 ],
       quality: { scoring: { name: 'mal', value: 2 }, lastValue: 30, time: 22 }
     }],
     qualityIndex: 2
