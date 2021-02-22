@@ -153,7 +153,9 @@ air.getpollutants().then((data) => {
 | 43          | Metano                              |
 | 44          | Hidrocarburos no metánicos (hexano) |
 
-| ID | Pollutant            | Muy bueno | Bueno   | Regular | Malo    | Muy malo |
+### How is the quality index calculated
+
+| ID | Pollutant            | Very good | Good    | Regular | Bad     | Very bad |
 | ---|----------------------|-----------|---------|---------|---------|----------|
 | 9  | Partículas < 2.5 µm  | 0-10      | 11-20   | 21-25   | 26-50   | 51-800   |
 | 10 | Partículas < 10 µm   | 0-20      | 21-35   | 36-50   | 51-100  | 101-1200 |
