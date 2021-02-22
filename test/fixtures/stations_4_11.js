@@ -4,7 +4,7 @@ module.exports = [{
   address: 'Plaza de España',
   lng: '-3.7122567',
   lat: '40.4238823',
-  magnitudes: [
+  pollutants: [
     {
       id: '1',
       name: 'Dióxido de Azufre',
@@ -84,7 +84,7 @@ module.exports = [{
     address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
     lng: '-3.6773491',
     lat: '40.4514734',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',

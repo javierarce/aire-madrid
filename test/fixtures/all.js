@@ -4,7 +4,7 @@ module.exports = [{
     address: 'Plaza de España',
     lng: '-3.7122567',
     lat: '40.4238823',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -84,7 +84,7 @@ module.exports = [{
     address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
     lng: '-3.6823158',
     lat: '40.4215533',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -257,7 +257,7 @@ module.exports = [{
     address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
     lng: '-3.6773491',
     lat: '40.4514734',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -344,7 +344,7 @@ module.exports = [{
     address: 'C/ Arturo Soria  esq. C/  Vizconde de los Asilos ',
     lng: '-3.6392422',
     lat: '40.4400457',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -413,7 +413,7 @@ module.exports = [{
     address: 'C/. Juan Peñalver',
     lng: '-3.7133167',
     lat: '40.347147',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -482,7 +482,7 @@ module.exports = [{
     address: 'Calle Farolillo - C/Ervigio',
     lng: '-3.7318356',
     lat: '40.3947825',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -636,7 +636,7 @@ module.exports = [{
     address: 'Casa de Campo  (Terminal del Teleférico)',
     lng: '-3.7473445',
     lat: '40.4193577',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -777,7 +777,7 @@ module.exports = [{
     address: 'C/. Júpiter, 21 (Barajas) ',
     lng: '-3.5800258',
     lat: '40.4769179',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -845,7 +845,7 @@ module.exports = [{
     address: 'Plaza del Carmen esq. Tres Cruces. ',
     lng: '-3.7031662',
     lat: '40.4192091',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -944,7 +944,7 @@ module.exports = [{
     address: 'Avd. Moratalaz  esq. Camino de los Vinateros',
     lng: '-3.6453104',
     lat: '40.4079517',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -1032,7 +1032,7 @@ module.exports = [{
     address: 'Avda. Pablo Iglesias esq. C/ Marqués de Lema',
     lng: '-3.7071303',
     lat: '40.4455439',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1156,7 +1156,7 @@ module.exports = [{
     address: 'Avd. Betanzos esq. C/  Monforte de Lemos ',
     lng: '-3.7115364',
     lat: '40.4782322',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1225,7 +1225,7 @@ module.exports = [{
     address: 'C/ Arroyo del Olivar  esq. C/  Río Grande. ',
     lng: '-3.6515286',
     lat: '40.3881478',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1295,7 +1295,7 @@ module.exports = [{
     address: 'C/ Juan de Mariana / Pza. Amanecer Mendez Alvaro',
     lng: '-3.6868138',
     lat: '40.3980991',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1383,7 +1383,7 @@ module.exports = [{
     address: 'C/ Jose Gutierrez Abascal',
     lng: '-3.6903729',
     lat: '40.4398904',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1471,7 +1471,7 @@ module.exports = [{
     address: 'Paseo Venezuela- Casa de Vacas',
     lng: '-3.6824999',
     lat: '40.4144444',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1539,7 +1539,7 @@ module.exports = [{
     address: 'Plaza Castilla (Canal)',
     lng: '-3.6887449',
     lat: '40.4655841',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1627,7 +1627,7 @@ module.exports = [{
     address: 'Avda La Gavia / Avda. Las Suertes',
     lng: '-3.6121394',
     lat: '40.3730118',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1695,7 +1695,7 @@ module.exports = [{
     address: 'C/ Riaño (Barajas) ',
     lng: '-3.5805649',
     lat: '40.4623628',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -1801,7 +1801,7 @@ module.exports = [{
     address: ' Pza. Elíptica - Avda. Oporto',
     lng: '-3.7187679',
     lat: '40.3850336',
-    magnitudes: [
+    pollutants: [
       {
         id: '6',
         name: 'Monóxido de Carbono',
@@ -1919,7 +1919,7 @@ module.exports = [{
     address: 'C/ Princesa de Eboli esq C/ Maria Tudor',
     lng: '-3.6605173',
     lat: '40.4942012',
-    magnitudes: [
+    pollutants: [
       {
         id: '1',
         name: 'Dióxido de Azufre',
@@ -2006,7 +2006,7 @@ module.exports = [{
     address: 'Avda. La Guardia',
     lng: '-3.7746101',
     lat: '40.5180701',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -2074,7 +2074,7 @@ module.exports = [{
     address: 'Parque Juan Carlos I (frente oficinas mantenimiento)',
     lng: '-3.6163407',
     lat: '40.4607255',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -2142,7 +2142,7 @@ module.exports = [{
     address: 'Plaza Tres Olivos ',
     lng: '-3.6897308',
     lat: '40.5005477',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',

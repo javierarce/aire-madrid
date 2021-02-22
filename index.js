@@ -5,7 +5,7 @@ const parser = require('xml2json')
 const fs = require('fs')
 
 const CONFIG = require('./config')
-const MAGNITUDES = require('./data/magnitudes')
+const POLLUTANTS = require('./data/pollutants')
 const STATIONS = require('./data/stations')
 
 module.exports = class Air {
@@ -66,10 +66,10 @@ module.exports = class Air {
     return response
   }
 
-  getMagnitudes () {
+  getpollutants () {
     return new Promise((resolve, reject) => {
       try {
-        let response = this.getArrayFromHash(MAGNITUDES)
+        let response = this.getArrayFromHash(POLLUTANTS)
         resolve(response)
       } catch (error) {
         console.error(error)
@@ -98,14 +98,14 @@ module.exports = class Air {
           return resolve(this.getArrayFromHash(stations))
         } 
 
-        let magnitudes = options.magnitudes
+        let pollutants = options.pollutants
 
-        if (options.magnitude) {
-          magnitudes = [options.magnitude]
+        if (options.pollutant) {
+          pollutants = [options.pollutant]
         }
 
         if (options.station) {
-          let result = this.filterByStation(stations, options.station, magnitudes)
+          let result = this.filterByStation(stations, options.station, pollutants)
           return resolve(result)
         }
 
@@ -113,7 +113,7 @@ module.exports = class Air {
           let result = []
 
           options.stations.forEach((stationID) => {
-            result.push(this.filterByStation(stations, stationID, magnitudes))
+            result.push(this.filterByStation(stations, stationID, pollutants))
           })
 
           resolve(result)
@@ -122,15 +122,15 @@ module.exports = class Air {
     })
   }
 
-  filterByStation (stations, stationID, magnitudesIDs) {
+  filterByStation (stations, stationID, pollutantsIDs) {
     let station = stations[stationID]
     let result = station
 
-    if (magnitudesIDs && magnitudesIDs.length) {
+    if (pollutantsIDs && pollutantsIDs.length) {
 
       result = { ...station }
-      result.magnitudes = station.magnitudes.filter((magnitude) => {
-        return magnitudesIDs.includes(+magnitude.id)
+      result.pollutants = station.pollutants.filter((pollutant) => {
+        return pollutantsIDs.includes(+pollutant.id)
       })
     }
 
@@ -140,7 +140,7 @@ module.exports = class Air {
   extractStationData (id, point) {
     let values = []
 
-    let magnitude = MAGNITUDES[+point.magnitud] ? MAGNITUDES[+point.magnitud] : undefined
+    let pollutant = POLLUTANTS[+point.magnitud] ? POLLUTANTS[+point.magnitud] : undefined
 
     for (let i = 0; i < 24; i++) {
       let id = this.padNumber(i + 1) 
@@ -149,7 +149,7 @@ module.exports = class Air {
       values[i] = valid ? point[`H${id}`] : '-1'
     }
 
-    return { ...magnitude, values }
+    return { ...pollutant, values }
   }
 
   extractData (airData) {
@@ -166,7 +166,7 @@ module.exports = class Air {
       let data = JSON.parse(json).Datos.Dato_Horario
 
       let stations = {}
-      let magnitudes = {}
+      let pollutants = {}
 
       data.forEach((point) => {
         let id = +point.estacion
@@ -175,15 +175,15 @@ module.exports = class Air {
           stations[id] = {}
         }
 
-        if (!magnitudes[id]) {
-          magnitudes[id] = []
+        if (!pollutants[id]) {
+          pollutants[id] = []
         }
 
-        magnitudes[id].push(this.extractStationData(id, point))
+        pollutants[id].push(this.extractStationData(id, point))
 
         stations[id] = {
           ...STATIONS[id],
-          magnitudes: magnitudes[id]
+          pollutants: pollutants[id]
         }
       })
 

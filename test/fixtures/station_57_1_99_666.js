@@ -4,7 +4,7 @@ module.exports = {
   address: 'C/ Princesa de Eboli esq C/ Maria Tudor',
   lng: '-3.6605173',
   lat: '40.4942012',
-  magnitudes: [
+  pollutants: [
     {
       id: '1',
       name: 'Dióxido de Azufre',

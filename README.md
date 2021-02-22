@@ -21,7 +21,7 @@ Notice that the station 11 ('Avda. Ramón y Cajal') doesn't provide readings of 
 ```js
 const air = require('aire-madrid')
 
-air.getReadings({ stations: [8, 11], magnitudes: [7, 9]}).then((data) => {
+air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
   console.log(data)
 })
 ```
@@ -34,7 +34,7 @@ air.getReadings({ stations: [8, 11], magnitudes: [7, 9]}).then((data) => {
     address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
     lng: '-3.6823158',
     lat: '40.4215533',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -65,7 +65,7 @@ air.getReadings({ stations: [8, 11], magnitudes: [7, 9]}).then((data) => {
     address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
     lng: '-3.6773491',
     lat: '40.4514734',
-    magnitudes: [
+    pollutants: [
       {
         id: '7',
         name: 'Monóxido de Nitrógeno',
@@ -111,12 +111,12 @@ air.getStations().then((data) => {
   …
 ```
 
-#### Get the list of magnitudes
+#### Get the list of pollutants
 
 ```js
 const air = require('aire-madrid')
 
-air.getMagnitudes().then((data) => {
+air.getpollutants().then((data) => {
   console.log(data)
 })
 ```
@@ -133,7 +133,7 @@ air.getMagnitudes().then((data) => {
 
 ### Legend
 
-| Magnitude   | Code                                |
+| pollutant   | Code                                |
 | ----------- |-------------------------------------|
 | 1           | Dióxido de Azufre                   |
 | 6           | Monóxido de Carbono                 |
@@ -160,12 +160,12 @@ air.getMagnitudes().then((data) => {
 
 ### TODO
 
-- [ ] Find a better name than 'magnitude'
-- [ ] Add magnitudes metadata (units, abbreviations, etc.)
+- [ ] Add pollutants metadata (units, abbreviations, etc.)
 - [ ] Add method to get an air quality score
 
 ### DONE
 
+- [x] Find a better name than 'magnitude'
 - [x] Return data in the form of an array
 - [x] Add tests
 - [x] Add more methods to get readings
