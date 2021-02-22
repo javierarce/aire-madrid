@@ -52,6 +52,16 @@ module.exports = class Air {
     })
   }
 
+  pickScoring (number, scoring) {
+    return scoring.filter((score) => {
+      return this.isInRange(number, score.range)
+    })
+  }
+
+  isInRange (number, range) {
+    return range[0] <= number && number <= range[1]
+  }
+
   padNumber (number) {
     return (number < 10) ? `0${number}` : number
   }
@@ -66,7 +76,7 @@ module.exports = class Air {
     return response
   }
 
-  getpollutants () {
+  getPollutants () {
     return new Promise((resolve, reject) => {
       try {
         let response = this.getArrayFromHash(POLLUTANTS)
@@ -146,7 +156,7 @@ module.exports = class Air {
       let id = this.padNumber(i + 1) 
 
       let valid = point[`V${id}`] === 'V'
-      values[i] = valid ? point[`H${id}`] : '-1'
+      values[i] = valid ? point[`H${id}`] : undefined
     }
 
     return { ...pollutant, values }
