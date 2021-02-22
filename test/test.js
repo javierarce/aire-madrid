@@ -56,7 +56,7 @@ describe('Readings', () => {
   })
 
   it('should return data for a given station and a magnitude', async () => {
-    let result = await air.getReadings({ station: 57, magnitudes: [1] })
+    let result = await air.getReadings({ station: 57, magnitude: 1 })
     expect(result).to.deep.equal(FIXTURES.station_57_1)
   })
 

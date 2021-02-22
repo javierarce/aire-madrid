@@ -98,8 +98,14 @@ module.exports = class Air {
           return resolve(this.getArrayFromHash(stations))
         } 
 
+        let magnitudes = options.magnitudes
+
+        if (options.magnitude) {
+          magnitudes = [options.magnitude]
+        }
+
         if (options.station) {
-          let result = this.filterByStation(stations, options.station, options.magnitudes)
+          let result = this.filterByStation(stations, options.station, magnitudes)
           return resolve(result)
         }
 
@@ -107,7 +113,7 @@ module.exports = class Air {
           let result = []
 
           options.stations.forEach((stationID) => {
-            result.push(this.filterByStation(stations, stationID, options.magnitudes))
+            result.push(this.filterByStation(stations, stationID, magnitudes))
           })
 
           resolve(result)
@@ -153,6 +159,7 @@ module.exports = class Air {
       try {
         json = parser.toJson(airData)
       } catch (error) {
+        console.error(error)
         return reject(error)
       }
 
