@@ -16,7 +16,8 @@ or
 
 #### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 8 and 11.
 
-Notice that the station 11 ('Avda. Ramón y Cajal') doesn't provide readings of 'Partículas < 2.5 µm'.
+- The first value in the `values` array corresponds to the 1 AM of the current day
+- Not all the stations provide information about all the pollutants.
 
 ```js
 const air = require('aire-madrid')
@@ -28,7 +29,7 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
 
 ```js
 [
-  {
+{
     id: '8',
     name: 'Escuelas Aguirre',
     address: 'Entre C/ Alcalá y C/ O\x92 Donell ',
@@ -39,27 +40,32 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
         id: '7',
         name: 'Monóxido de Nitrógeno',
         values: [
-          '22', '11', '4',  '2',  '2',
-          '2',  '3',  '5',  '10', '10',
-          '7',  '4',  '3',  '3',  '3',
-          '2',  '2',  '3',  '3',  '4',
-          '4',  '9',  '-1', '-1'
+          22, 11,  4, 2, 2, 2, 3,
+           5, 10, 10, 7, 4, 3, 3,
+           3,  2,  2, 3, 3, 4, 4,
+           9
         ]
       },
       {
         id: '9',
         name: 'Partículas < 2.5 µm',
+        scoring: [
+          { value: 5, name: 'muy bien', range: [ 0, 10 ] },
+          { value: 4, name: 'bien', range: [ 11, 20 ] },
+          { value: 3, name: 'regular', range: [ 21, 25 ] },
+          { value: 2, name: 'mal', range: [ 26, 50 ] },
+          { value: 1, name: 'muy mal', range: [ 51, 800 ] }
+        ],
         values: [
-          '14', '14', '11', '5',  '6',
-          '9',  '7',  '5',  '10', '12',
-          '15', '11', '11', '11', '8',
-          '12', '13', '19', '17', '17',
-          '25', '30', '-1', '-1'
-        ]
+          14, 14, 11,  5,  6,  9,  7,
+           5, 10, 12, 15, 11, 11, 11,
+           8, 12, 13, 19, 17, 17, 25,
+          30
+        ],
+        quality: { scoring: { name: 'mal', value: 2 }, lastValue: 30, time: 22 }
       }
     ]
-  },
-  {
+  }, {
     id: '11',
     name: 'Avda. Ramón y Cajal',
     address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
@@ -70,11 +76,10 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
         id: '7',
         name: 'Monóxido de Nitrógeno',
         values: [
-          '3',  '3',  '1',  '1',  '1',
-          '1',  '1',  '6',  '19', '12',
-          '11', '12', '9',  '8',  '6',
-          '5',  '4',  '5',  '7',  '8',
-          '14', '11', '-1', '-1'
+           3,  3,  1,  1,  1, 1,  1,
+           6, 19, 12, 11, 12, 9,  8,
+           6,  5,  4,  5,  7, 8, 14,
+          11
         ]
       }
     ]
@@ -113,6 +118,8 @@ air.getStations().then((data) => {
 
 #### Get the list of pollutants
 
+For 
+
 ```js
 const air = require('aire-madrid')
 
@@ -123,11 +130,20 @@ air.getPollutants().then((data) => {
 
 ```js
 [
-  { id: '1', name: 'Dióxido de Azufre' },
+  {
+    id: '1',
+    name: 'Dióxido de Azufre',
+    scoring: [
+      { value: 5, name: 'muy bien', range: [ 0, 100 ] },
+      { value: 4, name: 'bien', range: [ 101, 200 ] },
+      { value: 3, name: 'regular', range: [ 201, 350 ] },
+      { value: 2, name: 'mal', range: [ 351, 500 ] },
+      { value: 1, name: 'muy mal', range: [ 501, 1250 ] }
+    ]
+  },
   { id: '6', name: 'Monóxido de Carbono' },
+  { id: '7', name: 'Monóxido de Nitrógeno' },
   …
-  { id: '43', name: 'Metano' },
-  { id: '44', name: 'Hidrocarburos no metánicos (hexano)' }
 ]
 ```
 
