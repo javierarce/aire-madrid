@@ -53,9 +53,18 @@ module.exports = class Air {
   }
 
   pickScoring (number, scoring) {
-    return scoring.filter((score) => {
+    let score = scoring.filter((score) => {
       return this.isInRange(number, score.range)
     })
+
+    if (score && score.length) {
+      let name = score[0].name 
+      let value = score[0].value 
+
+      return { name, value }
+    } else {
+      return undefined
+    }
   }
 
   isInRange (number, range) {
@@ -156,7 +165,25 @@ module.exports = class Air {
       let id = this.padNumber(i + 1) 
 
       let valid = point[`V${id}`] === 'V'
-      values[i] = valid ? point[`H${id}`] : undefined
+      values[i] = valid ? +point[`H${id}`] : undefined
+    }
+
+    values = values.filter((x) => {
+      return x !== undefined
+    })
+
+    if (pollutant.scoring) {
+      let lastValue = values[values.length - 1]
+      let time = values.length
+      let scoring = this.pickScoring(lastValue, pollutant.scoring)
+
+      let quality = {
+        scoring,
+        lastValue,
+        time
+      }
+
+      return { ...pollutant, values, quality }
     }
 
     return { ...pollutant, values }

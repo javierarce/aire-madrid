@@ -172,11 +172,11 @@ air.getPollutants().then((data) => {
 
 ### TODO
 
-- [ ] Add pollutants metadata (units, abbreviations, etc.)
-- [ ] Add method to get an air quality score
+- [ ] Add a global quality score for a station
 
 ### DONE
 
+- [x] Add pollutants scoring
 - [x] Find a better name than 'magnitude'
 - [x] Return data in the form of an array
 - [x] Add tests
