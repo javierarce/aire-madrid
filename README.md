@@ -51,9 +51,6 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
     qualityIndex: 2
   }, {
   …
-  }
-]
-]
 ```
 
 - The first value in the `values` array corresponds to the 1 AM of the current day.
