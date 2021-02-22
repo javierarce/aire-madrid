@@ -12,13 +12,9 @@ or
 
 `npm install aire-madrid`
 
-### How to use it 
+### Usage examples
 
 #### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 8 and 11.
-
-- The first value in the `values` array corresponds to the 1 AM of the current day
-- Not all the stations provide information about all the pollutants.
-- For [these pollutants](#how-is-the-quality-index-calculated) a scoring is offered.
 
 ```js
 const air = require('aire-madrid')
@@ -64,25 +60,14 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
       }
     ]
   }, {
-    id: '11',
-    name: 'Avda. Ramón y Cajal',
-    address: 'Avda. Ramón y Cajal  esq. C/ Príncipe de Vergara',
-    lng: '-3.6773491',
-    lat: '40.4514734',
-    pollutants: [{
-        id: '7',
-        name: 'Monóxido de Nitrógeno',
-        values: [
-           3,  3,  1,  1,  1, 1,  1,
-           6, 19, 12, 11, 12, 9,  8,
-           6,  5,  4,  5,  7, 8, 14,
-          11
-        ]
-      }
-    ]
+  …
   }
 ]
 ```
+
+- The first value in the `values` array corresponds to the 1 AM of the current day.
+- Not all the stations provide information about all the pollutants.
+- For [these pollutants](#how-is-the-quality-index-calculated) a scoring is offered.
 
 #### Get the list of stations
 
@@ -115,8 +100,6 @@ air.getStations().then((data) => {
 
 #### Get the list of pollutants
 
-For 
-
 ```js
 const air = require('aire-madrid')
 
@@ -144,7 +127,9 @@ air.getPollutants().then((data) => {
 ]
 ```
 
-### Pollutants
+### Pollutant ids
+
+Use the following ids to get readings about each pollutant.
 
 | ID          | Name                                |
 | ----------- |-------------------------------------|
