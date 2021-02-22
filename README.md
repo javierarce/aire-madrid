@@ -131,9 +131,9 @@ air.getpollutants().then((data) => {
 ]
 ```
 
-### Legend
+### Pollutants
 
-| pollutant   | Code                                |
+| ID          | Name                                |
 | ----------- |-------------------------------------|
 | 1           | Dióxido de Azufre                   |
 | 6           | Monóxido de Carbono                 |
@@ -152,6 +152,16 @@ air.getpollutants().then((data) => {
 | 42          | Hidrocarburos totales (hexano)      |
 | 43          | Metano                              |
 | 44          | Hidrocarburos no metánicos (hexano) |
+
+| ID | Pollutant            | Muy bueno | Bueno   | Regular | Malo    | Muy malo |
+| ---|----------------------|-----------|---------|---------|---------|----------|
+| 9  | Partículas < 2.5 µm  | 0-10      | 11-20   | 21-25   | 26-50   | 51-800   |
+| 10 | Partículas < 10 µm   | 0-20      | 21-35   | 36-50   | 51-100  | 101-1200 |
+| 8  | Dióxido de Nitrógeno | 0-40      | 41-100  | 101-200 | 201-400 | 401-1000 |
+| 14 | Ozono                | 0-80      | 81-120  | 121-180 | 181-240 | 241-600  |
+| 1  | Dióxido de Azufre    | 0-100     | 101-200 | 201-350 | 351-500 | 501-1250 |
+
+[Source](http://www.mambiente.madrid.es/opencms/export/sites/default/calaire/Anexos/indice_ca.pdf)
 
 ### Data sources
 
