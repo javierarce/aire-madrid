@@ -27,5 +27,6 @@ module.exports = {
         time: 22
       }
     }
-  ]
+  ],
+  qualityIndex: 1
 }

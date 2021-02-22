@@ -11,6 +11,7 @@ const STATIONS = require('./data/stations')
 module.exports = class Air {
   constructor (source) {
     this.source = source
+    this.stations = []
   }
 
   importData() {
@@ -85,6 +86,16 @@ module.exports = class Air {
     return response
   }
 
+  getStationIndex (pollutants) {
+    const method = (result, pollutant) => {
+      let score = pollutant.quality && pollutant.quality.scoring.value
+      return (score && result.push(score), result)
+    }
+
+    let values = pollutants.reduce(method, [])
+    return Math.min(...values)
+  }
+
   getPollutants () {
     return new Promise((resolve, reject) => {
       try {
@@ -112,9 +123,17 @@ module.exports = class Air {
   getReadings (options = undefined) {
     return new Promise((resolve) => {
       this.importData().then((stations) => {
+
+        this.stations = stations
         
         if (options == undefined) {
-          return resolve(this.getArrayFromHash(stations))
+          let result = this.getArrayFromHash(this.stations)
+
+          result.forEach((station) => {
+            station.qualityIndex = this.getStationIndex(station.pollutants)
+          })
+
+          return resolve(result)
         } 
 
         let pollutants = options.pollutants
@@ -124,7 +143,7 @@ module.exports = class Air {
         }
 
         if (options.station) {
-          let result = this.filterByStation(stations, options.station, pollutants)
+          let result = this.filterByStation(options.station, pollutants)
           return resolve(result)
         }
 
@@ -132,7 +151,7 @@ module.exports = class Air {
           let result = []
 
           options.stations.forEach((stationID) => {
-            result.push(this.filterByStation(stations, stationID, pollutants))
+            result.push(this.filterByStation(stationID, pollutants))
           })
 
           resolve(result)
@@ -141,17 +160,18 @@ module.exports = class Air {
     })
   }
 
-  filterByStation (stations, stationID, pollutantsIDs) {
-    let station = stations[stationID]
+  filterByStation (stationID, pollutantsIDs) {
+    let station = this.stations[stationID]
     let result = station
 
     if (pollutantsIDs && pollutantsIDs.length) {
-
       result = { ...station }
       result.pollutants = station.pollutants.filter((pollutant) => {
         return pollutantsIDs.includes(+pollutant.id)
       })
     }
+
+    result.qualityIndex = this.getStationIndex(station.pollutants)
 
     return result
   }

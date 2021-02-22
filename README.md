@@ -32,36 +32,27 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
     lng: '-3.6823158',
     lat: '40.4215533',
     pollutants: [{
-        id: '7',
-        name: 'Monóxido de Nitrógeno',
-        values: [
-          22, 11,  4, 2, 2, 2, 3,
-           5, 10, 10, 7, 4, 3, 3,
-           3,  2,  2, 3, 3, 4, 4,
-           9
-        ]
-      }, {
-        id: '9',
-        name: 'Partículas < 2.5 µm',
-        scoring: [
-          { value: 5, name: 'muy bien', range: [ 0, 10 ] },
-          { value: 4, name: 'bien', range: [ 11, 20 ] },
-          { value: 3, name: 'regular', range: [ 21, 25 ] },
-          { value: 2, name: 'mal', range: [ 26, 50 ] },
-          { value: 1, name: 'muy mal', range: [ 51, 800 ] }
-        ],
-        values: [
-          14, 14, 11,  5,  6,  9,  7,
-           5, 10, 12, 15, 11, 11, 11,
-           8, 12, 13, 19, 17, 17, 25,
-          30
-        ],
-        quality: { scoring: { name: 'mal', value: 2 }, lastValue: 30, time: 22 }
-      }
-    ]
+      id: '7',
+      name: 'Monóxido de Nitrógeno',
+      values: [ 22, 11,  4, 2, 2, 2, 3, 5, 10, 10, 7, 4, 3, 3, 3,  2,  2, 3, 3, 4, 4, 9 ]
+    }, {
+      id: '9',
+      name: 'Partículas < 2.5 µm',
+      scoring: [
+        { value: 5, name: 'muy bien', range: [ 0, 10 ] },
+        { value: 4, name: 'bien', range: [ 11, 20 ] },
+        { value: 3, name: 'regular', range: [ 21, 25 ] },
+        { value: 2, name: 'mal', range: [ 26, 50 ] },
+        { value: 1, name: 'muy mal', range: [ 51, 800 ] }
+      ],
+      values: [ 14, 14, 11,  5,  6,  9,  7, 5, 10, 12, 15, 11, 11, 11, 8, 12, 13, 19, 17, 17, 25, 30 ],
+      quality: { scoring: { name: 'mal', value: 2 }, lastValue: 30, time: 22 }
+    }],
+    qualityIndex: 2
   }, {
   …
   }
+]
 ]
 ```
 
@@ -153,15 +144,15 @@ Use the following ids to get readings about each pollutant.
 
 ### How is the quality index calculated
 
-| ID | Pollutant            | Very good | Good    | Regular | Bad     | Very bad |
-| ---|----------------------|-----------|---------|---------|---------|----------|
-| 9  | Partículas < 2.5 µm  | 0-10      | 11-20   | 21-25   | 26-50   | 51-800   |
-| 10 | Partículas < 10 µm   | 0-20      | 21-35   | 36-50   | 51-100  | 101-1200 |
-| 8  | Dióxido de Nitrógeno | 0-40      | 41-100  | 101-200 | 201-400 | 401-1000 |
-| 14 | Ozono                | 0-80      | 81-120  | 121-180 | 181-240 | 241-600  |
-| 1  | Dióxido de Azufre    | 0-100     | 101-200 | 201-350 | 351-500 | 501-1250 |
+| ID | Pollutant            | Very good (5) | Good (4) | Regular (3) | Bad (2) | Very bad  (1) |
+| ---|----------------------|---------------|----------|-------------|---------|---------------|
+| 9  | Partículas < 2.5 µm  | 0-10          | 11-20    | 21-25       | 26-50   | 51-800        |
+| 10 | Partículas < 10 µm   | 0-20          | 21-35    | 36-50       | 51-100  | 101-1200      |
+| 8  | Dióxido de Nitrógeno | 0-40          | 41-100   | 101-200     | 201-400 | 401-1000      |
+| 14 | Ozono                | 0-80          | 81-120   | 121-180     | 181-240 | 241-600       |
+| 1  | Dióxido de Azufre    | 0-100         | 101-200  | 201-350     | 351-500 | 501-1250      |
 
-[Source](http://www.mambiente.madrid.es/opencms/export/sites/default/calaire/Anexos/indice_ca.pdf)
+[Source for the table](http://www.mambiente.madrid.es/opencms/export/sites/default/calaire/Anexos/indice_ca.pdf)
 
 ### Data sources
 
@@ -170,10 +161,11 @@ Use the following ids to get readings about each pollutant.
 
 ### TODO
 
-- [ ] Add a global quality score for a station
+- [ ] Improve this README
 
 ### DONE
 
+- [x] Add a global quality score for a station
 - [x] Add pollutants scoring
 - [x] Find a better name than 'magnitude'
 - [x] Return data in the form of an array

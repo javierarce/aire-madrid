@@ -80,7 +80,8 @@ module.exports = [{
         55
       ]
     }
-  ]
+  ],
+  qualityIndex: 4
 },
   {
     id: '8',
@@ -254,7 +255,8 @@ module.exports = [{
           0.8, 0.9,   1,   1
         ]
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '11',
@@ -337,7 +339,8 @@ module.exports = [{
           0.3, 0.2
         ]
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '16',
@@ -410,7 +413,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '17',
@@ -483,7 +487,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '18',
@@ -641,7 +646,8 @@ module.exports = [{
           0.1, 0.1, 0.2, 0.4
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '24',
@@ -786,7 +792,8 @@ module.exports = [{
           0.1, 0.1, 0.1, 0.1
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '27',
@@ -859,7 +866,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '35',
@@ -965,7 +973,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '36',
@@ -1060,7 +1069,8 @@ module.exports = [{
           70
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '38',
@@ -1179,7 +1189,8 @@ module.exports = [{
           0.2, 0.2
         ]
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '39',
@@ -1252,7 +1263,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '40',
@@ -1325,7 +1337,8 @@ module.exports = [{
           53
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '47',
@@ -1412,7 +1425,8 @@ module.exports = [{
           86
         ]
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '48',
@@ -1499,7 +1513,8 @@ module.exports = [{
           75
         ]
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '49',
@@ -1572,7 +1587,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '50',
@@ -1663,7 +1679,8 @@ module.exports = [{
           67
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '54',
@@ -1736,7 +1753,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '55',
@@ -1836,7 +1854,8 @@ module.exports = [{
           0.1, 0.1
         ]
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '56',
@@ -1956,7 +1975,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 2
   },
   {
     id: '57',
@@ -2051,7 +2071,8 @@ module.exports = [{
           59
         ]
       }
-    ]
+    ],
+    qualityIndex: 1
   },
   {
     id: '58',
@@ -2124,7 +2145,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '59',
@@ -2197,7 +2219,8 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 4
   },
   {
     id: '60',
@@ -2292,6 +2315,7 @@ module.exports = [{
           time: 22
         }
       }
-    ]
+    ],
+    qualityIndex: 2
   }
 ]
