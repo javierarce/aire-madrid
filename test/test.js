@@ -41,7 +41,7 @@ describe('Readings', () => {
   })
 
   it('should return the list of pollutants', async () => {
-    let result = await air.getpollutants()
+    let result = await air.getPollutants()
     expect(result).to.deep.equal(FIXTURES.pollutants)
   })
 

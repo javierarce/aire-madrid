@@ -116,7 +116,7 @@ air.getStations().then((data) => {
 ```js
 const air = require('aire-madrid')
 
-air.getpollutants().then((data) => {
+air.getPollutants().then((data) => {
   console.log(data)
 })
 ```
