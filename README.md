@@ -59,8 +59,8 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
 </details>
 
 - The first value in the `values` array corresponds to the 1 AM of the current day.
-- Not all the stations provide information about all the pollutants.
-- For [these pollutants](#how-is-the-quality-index-calculated) a scoring is offered.
+- Pollutant IDs can be found [here](/javierarce/aire-madrid/wiki/pollutants).
+- For [these pollutants](/javierarce/aire-madrid/wiki/how-are-quality-indexes-calculated) a scoring is offered.
 
 #### Get the list of stations
 
@@ -127,9 +127,9 @@ air.getPollutants().then((data) => {
 
 ### More information
 
-- [Pollutants ids](https://github.com/javierarce/aire-madrid/wiki/pollutants)
-- [How is the quality index calculated](https://github.com/javierarce/aire-madrid/wiki/quality-index)
-- [Data sources](https://github.com/javierarce/aire-madrid/wiki/data-sources)
+- [Pollutants ids](/javierarce/aire-madrid/wiki/pollutants)
+- [How are quality indexes calculated](/javierarce/aire-madrid/wiki/how-are-quality-indexes-calculated)
+- [Data sources](/javierarce/aire-madrid/wiki/data-sources)
 
 ### TODO
 
