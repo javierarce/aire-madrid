@@ -72,7 +72,8 @@ air.getStations().then((data) => {
   console.log(data)
 })
 ```
-
+<details>
+  <summary>See output</summary>
 ```js
 [
   {
@@ -91,6 +92,7 @@ air.getStations().then((data) => {
   },
   …
 ```
+</details>
 
 #### Get the list of pollutants
 
@@ -102,6 +104,8 @@ air.getPollutants().then((data) => {
 })
 ```
 
+<details>
+  <summary>See output</summary>
 ```js
 [
   {
@@ -120,6 +124,7 @@ air.getPollutants().then((data) => {
   …
 ]
 ```
+</details>
 
 ### Pollutant ids
 
