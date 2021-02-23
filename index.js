@@ -1,4 +1,5 @@
 'use strict'
+const util = require('util')
 
 const http = require('http')
 const parser = require('xml2json')
@@ -9,9 +10,12 @@ const POLLUTANTS = require('./data/pollutants')
 const STATIONS = require('./data/stations')
 
 class Air {
-  constructor (source) {
-    this.source = source
+  constructor () {
     this.stations = []
+  }
+
+  loadDataFromXML(source) {
+    this.source = source
   }
 
   importData() {
@@ -88,7 +92,7 @@ class Air {
 
   getStationIndex (pollutants) {
     const method = (result, pollutant) => {
-      let score = pollutant.quality && pollutant.quality.scoring.value
+      let score = pollutant.quality && pollutant.quality.scoring && pollutant.quality.scoring.value
       return (score && result.push(score), result)
     }
 
@@ -178,21 +182,34 @@ class Air {
 
   extractStationData (id, point) {
     let values = []
+    let error = undefined
 
     let pollutant = POLLUTANTS[+point.magnitud] ? POLLUTANTS[+point.magnitud] : undefined
+
+    let lastValidValueIndex = 0
 
     for (let i = 0; i < 24; i++) {
       let id = this.padNumber(i + 1) 
 
       let valid = point[`V${id}`] === 'V'
       values[i] = valid ? +point[`H${id}`] : undefined
+
+      if (valid) {
+        lastValidValueIndex = i
+      }
     }
 
     values = values.filter((x) => {
       return x !== undefined
     })
 
-    if (pollutant.scoring) {
+    if (values.length === 0) {
+      error = 'This station is not returning any readings'
+    } 
+
+    let result = { ...pollutant, values }
+
+    if (pollutant.scoring && values.length) {
       let lastValue = values[values.length - 1]
       let time = values.length
       let scoring = this.pickScoring(lastValue, pollutant.scoring)
@@ -203,10 +220,14 @@ class Air {
         time
       }
 
-      return { ...pollutant, values, quality }
+      result = { ...pollutant, values, quality }
     }
 
-    return { ...pollutant, values }
+    if (error) {
+      result.error = error
+    }
+
+    return result
   }
 
   extractData (airData) {
