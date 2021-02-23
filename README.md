@@ -160,7 +160,8 @@ Use the following ids to get readings about each pollutant.
 
 ### TODO
 
-- [ ] Improve this README
+- [ ] Show information about possible [problems in the stations](https://twitter.com/airedemadrid/status/1364142646382452736)
+- [ ] Improve this README.
 
 ### DONE
 
