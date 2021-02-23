@@ -5,8 +5,7 @@ const chai = require('chai')
 const nock = require('nock')
 const expect = require('chai').expect
  
-const Air = require('../index')
-const air = new Air()
+const air = require('../index')
 
 const CONFIG = require('../config')
 const URL = `http://${CONFIG.host}`

@@ -8,7 +8,7 @@ const CONFIG = require('./config')
 const POLLUTANTS = require('./data/pollutants')
 const STATIONS = require('./data/stations')
 
-module.exports = class Air {
+class Air {
   constructor (source) {
     this.source = source
     this.stations = []
@@ -248,3 +248,5 @@ module.exports = class Air {
     })
   }
 }
+
+module.exports = new Air()
