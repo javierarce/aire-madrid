@@ -130,10 +130,10 @@ air.getPollutants().then((data) => {
 ### TODO
 
 - [ ] Show information about possible [problems in the stations](https://twitter.com/airedemadrid/status/1364142646382452736)
-- [ ] Improve this README.
 
 ### DONE
 
+- [x] Improve this README.
 - [x] Add a global quality score for a station
 - [x] Add pollutants scoring
 - [x] Find a better name than 'magnitude'
