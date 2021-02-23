@@ -12,6 +12,7 @@ or
 
 `npm install aire-madrid`
 
+
 ### Usage examples
 
 #### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 8 and 11.
@@ -23,7 +24,9 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
   console.log(data)
 })
 ```
-
+<details>
+  <summary>See output</summary>
+  
 ```js
 [{
     id: '8',
@@ -54,6 +57,7 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
   }, {
   …
 ```
+</details>
 
 - The first value in the `values` array corresponds to the 1 AM of the current day.
 - Not all the stations provide information about all the pollutants.
