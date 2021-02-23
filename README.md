@@ -14,7 +14,7 @@ or
 
 ### Usage examples
 
-#### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 8 and 11.
+#### Get readings from 'Monóxido de Nitrógeno' (6) & 'Partículas < 2.5 µm' (9) at stations 8 (Escuelas Aguirre) and 11 (Avda. Ramón y Cajal).
 
 ```js
 const air = require('aire-madrid')
@@ -65,8 +65,6 @@ air.getReadings({ stations: [8, 11], pollutants: [7, 9]}).then((data) => {
 #### Get the list of stations
 
 ```js
-const air = require('aire-madrid')
-
 air.getStations().then((data) => {
   console.log(data)
 })
@@ -96,8 +94,6 @@ air.getStations().then((data) => {
 #### Get the list of pollutants
 
 ```js
-const air = require('aire-madrid')
-
 air.getPollutants().then((data) => {
   console.log(data)
 })
