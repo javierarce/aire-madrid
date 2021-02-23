@@ -12,7 +12,6 @@ or
 
 `npm install aire-madrid`
 
-
 ### Usage examples
 
 #### Get readings from 'Monóxido de Nitrógeno' & 'Partículas < 2.5 µm' at stations 8 and 11.
@@ -126,46 +125,11 @@ air.getPollutants().then((data) => {
 ```
 </details>
 
-### Pollutant ids
+### More information
 
-Use the following ids to get readings about each pollutant.
-
-| ID          | Name                                |
-| ----------- |-------------------------------------|
-| 1           | Dióxido de Azufre                   |
-| 6           | Monóxido de Carbono                 |
-| 7           | Monóxido de Nitrógeno               |
-| 8           | Dióxido de Nitrógeno                |
-| 9           | Partículas < 2.5 µm                 |
-| 10          | Partículas < 10 µm                  |
-| 12          | Óxidos de Nitrógeno                 |
-| 14          | Ozono                               |
-| 20          | Tolueno                             |
-| 30          | Benceno                             |
-| 35          | Etilbenceno                         |
-| 37          | Metaxileno                          |
-| 38          | Paraxileno                          |
-| 39          | Ortoxileno                          |
-| 42          | Hidrocarburos totales (hexano)      |
-| 43          | Metano                              |
-| 44          | Hidrocarburos no metánicos (hexano) |
-
-### How is the quality index calculated
-
-| ID | Pollutant            | Very good (5) | Good (4) | Regular (3) | Bad (2) | Very bad  (1) |
-| ---|----------------------|---------------|----------|-------------|---------|---------------|
-| 9  | Partículas < 2.5 µm  | 0-10          | 11-20    | 21-25       | 26-50   | 51-800        |
-| 10 | Partículas < 10 µm   | 0-20          | 21-35    | 36-50       | 51-100  | 101-1200      |
-| 8  | Dióxido de Nitrógeno | 0-40          | 41-100   | 101-200     | 201-400 | 401-1000      |
-| 14 | Ozono                | 0-80          | 81-120   | 121-180     | 181-240 | 241-600       |
-| 1  | Dióxido de Azufre    | 0-100         | 101-200  | 201-350     | 351-500 | 501-1250      |
-
-[Source for the table](http://www.mambiente.madrid.es/opencms/export/sites/default/calaire/Anexos/indice_ca.pdf)
-
-### Data sources
-
-- [Air quality readings](https://datos.madrid.es/sites/v/index.jsp?vgnextoid=41e01e007c9db410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD).
-- [Stations](https://datos.madrid.es/sites/v/index.jsp?vgnextoid=2ac5be53b4d2b610VgnVCM2000001f4a900aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD).
+- [Pollutants ids](https://github.com/javierarce/aire-madrid/wiki/pollutants)
+- [How is the quality index calculated](https://github.com/javierarce/aire-madrid/wiki/quality-index)
+- [Data sources](https://github.com/javierarce/aire-madrid/wiki/data-sources)
 
 ### TODO
 
