@@ -1,6 +1,6 @@
 {
   "name": "aire-madrid",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "license": "MIT",
   "description": "Get daily readings from the air quality stations in Madrid",
   "main": "index.js",
