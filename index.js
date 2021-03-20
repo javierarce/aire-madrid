@@ -2,7 +2,7 @@
 const util = require('util')
 
 const http = require('http')
-const parser = require('xml2json')
+const parser = require('fast-xml-parser')
 const fs = require('fs')
 
 const CONFIG = require('./config')
@@ -235,13 +235,13 @@ class Air {
       let json = {}
 
       try {
-        json = parser.toJson(airData)
+        json = parser.parse(airData)
       } catch (error) {
         console.error(error)
         return reject(error)
       }
 
-      let data = JSON.parse(json).Datos.Dato_Horario
+      let data = json.Datos.Dato_Horario
 
       let stations = {}
       let pollutants = {}
