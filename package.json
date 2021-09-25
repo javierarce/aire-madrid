@@ -1,6 +1,6 @@
 {
   "name": "aire-madrid",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "license": "MIT",
   "description": "Get daily readings from the air quality stations in Madrid",
   "main": "index.js",
@@ -26,10 +26,10 @@
     "chai": "^4.3.0",
     "chai-nock": "^1.3.0",
     "csv-parser": "^3.0.0",
-    "fast-xml-parser": "^3.19.0",
+    "fast-xml-parser": "^3.20.3",
     "fetch": "^1.1.0",
-    "iconv-lite": "^0.6.2",
-    "mocha": "^8.3.0",
-    "nock": "^13.0.7"
+    "iconv-lite": "^0.6.3",
+    "mocha": "^8.4.0",
+    "nock": "^13.1.3"
   }
 }

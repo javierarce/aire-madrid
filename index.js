@@ -1,7 +1,7 @@
 'use strict'
 const util = require('util')
 
-const http = require('http')
+const https = require('https')
 const parser = require('fast-xml-parser')
 const fs = require('fs')
 
@@ -28,15 +28,15 @@ class Air {
 
     return new Promise((resolve, reject) => {
       if (this.source) {
-        let data = fs.readFileSync(this.source)
+        let data = fs.readFileSync(this.source, "utf8").toString()
         return resolve(this.extractData(data))
       }
 
-      const req = http.request(options, res => {
+      const req = https.request(options, res => {
         let data = []
 
         res.on('data', (content) => {
-          data+=content
+          data += content
         })
 
         res.on('end', () => {
